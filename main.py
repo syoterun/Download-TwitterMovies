@@ -57,19 +57,10 @@ class Application(tk.Frame):
         #Button
         self.button_run = ttk.Button(self)
         self.button_run.configure(text="実行")
-        self.button_run.configure(command = self.click) #do not forget to add self!
+        self.button_run.configure(command = self.download_movies) 
         self.button_run.pack()
 
     # Event Callback Function
-    def say_Hello(self):
-        print("Hello, World")  # on python console
-        self.label_hello.configure(text="I Have benn Clicked!")
-        print(self.name.get())
-        self.label_name.configure(text=self.name.get())
-
-    def click(self):
-        self.after(1, self.download_movies)
-
     def download_movies(self): 
         search_results = tweepy.Cursor(api.user_timeline, screen_name = self.target.get()).items(int(self.count.get()))
         if not os.path.exists('img'):
