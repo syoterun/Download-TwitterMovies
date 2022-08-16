@@ -9,8 +9,8 @@ import urllib.request
 import tkinter as Tkinter
 from tkinter import messagebox
 import configparser
-import ssl
 
+import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 root = Tkinter.Tk()
