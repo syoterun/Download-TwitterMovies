@@ -97,7 +97,7 @@ class Application(tk.Frame):
 
 def main():
     root = tk.Tk()
-    app = Application(master=root)#Inheritクラスの継承！
+    app = Application(master=root)
     app.mainloop()
 
 if __name__ == "__main__":
